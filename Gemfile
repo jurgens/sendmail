@@ -10,6 +10,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'haml-rails'
+gem 'simple_form', '~>3.1.0.rc2'
 
 group :test, :development do
   gem 'rspec-rails'
