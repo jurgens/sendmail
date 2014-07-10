@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
     @message = Message.new message_params
 
     if @message.save
+      MessageMailer.send_message(@message).deliver
       redirect_to root_path, notice: 'Successfully created message'
     else
       render :new
