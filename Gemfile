@@ -9,3 +9,11 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+end
