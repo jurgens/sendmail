@@ -4,7 +4,7 @@
 - if @messages.empty?
   %p
     No messages sent.
-    = link_to 'Compose'
+    = link_to 'Compose', new_message_path
 
 - else
   %table.table
@@ -12,13 +12,13 @@
       %tr
         %th.to To
         %th.subject Subject
-        %th.date Date
+        %th.date Sent
         %th.actions
     - @messages.each do |message|
       %tr
         %td= message.to
         %td= message.subject
-        %td= time_ago_in_words message.created_at
+        %td #{time_ago_in_words message.created_at} ago
         %td
           = link_to message_path(message), method: :delete, data: {confirm: 'Are you sure you want to delete this message?'} do
             %span.glyphicon.glyphicon-remove
