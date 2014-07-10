@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Home', :type => :feature do
+RSpec.describe 'Home', type: :feature do
   specify 'should have a page logo and title' do
     visit '/'
     within 'header' do
