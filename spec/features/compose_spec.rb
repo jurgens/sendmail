@@ -4,7 +4,9 @@ RSpec.describe 'Mail', type: :feature do
 
   before do
     visit '/'
-    click_on 'Compose'
+    within '.navbar' do
+      click_link 'Compose'
+    end
   end
 
   specify 'submit message with empty params' do

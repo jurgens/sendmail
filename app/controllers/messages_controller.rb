@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-
+    @messages = Message.latest_first
   end
 
   def new

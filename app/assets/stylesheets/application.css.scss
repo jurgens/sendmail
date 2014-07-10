@@ -16,3 +16,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+table {
+  th.to {
+    width: 20%;
+  }
+
+  th.subject {
+    width: 60%;
+  }
+
+  th.date {
+    width: 20%;
+  }
+}
