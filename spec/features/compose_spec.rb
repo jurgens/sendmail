@@ -14,6 +14,11 @@ RSpec.describe 'Mail', type: :feature do
     expect(page).to_not have_content 'Success'
   end
 
+  specify 'submit message with invalid email' do
+    fill_and_submit_mail_form to: 'jurgen', subject: 'subject', body: 'body'
+    expect(page).to_not have_content 'Success'
+  end
+
   specify 'compose new mail with valid params' do
     within '.page-header' do
       expect(page).to have_content 'Compose'

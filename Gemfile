@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'haml-rails'
 gem 'simple_form', '~>3.1.0.rc2'
+gem 'email_validator'
 
 group :test, :development do
   gem 'rspec-rails'
