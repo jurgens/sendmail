@@ -9,6 +9,5 @@
         %span.icon-bar
       %a.navbar-brand{href: "/"} SendMail
     %nav.collapse.navbar-collapse.bs-navbar-collapse{role: "navigation"}
-      %ul.nav.navbar-nav
-        %li= link_to 'Mailbox', root_path
-        %li= link_to 'Compose', new_message_path
+      .pull-right
+        = link_to 'Compose', new_message_path, class: 'btn btn-primary navbar-btn'
