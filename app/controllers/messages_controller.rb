@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 
   before_action :get_message, only: [:show, :edit, :update, :destroy]
+  before_action :detect_commit_button, only: [:create, :update]
 
   def index
     @messages = Message.latest_first
@@ -24,7 +25,6 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @message.draft = false
     render action: 'new'
   end
 
@@ -48,6 +48,10 @@ class MessagesController < ApplicationController
     MessageMailer.send_message(message).deliver unless message.draft?
     what = message.draft? ? 'saved' : 'sent'
     redirect_to root_path, notice: "Message was successfully #{what}."
+  end
+
+  def detect_commit_button
+    params[:message][:draft] = params[:commit] == 'Save as draft'
   end
 
   def get_message

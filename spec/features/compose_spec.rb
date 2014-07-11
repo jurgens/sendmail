@@ -59,7 +59,7 @@ RSpec.describe 'Composing', type: :feature do
     before do
       clear_emails
       visit new_message_path
-      fill_and_submit_mail_form mail_params.merge!(draft: true)
+      fill_and_submit_mail_form mail_params, 'Save as draft'
       open_email 'jurgen@kodolabs.com'
     end
 

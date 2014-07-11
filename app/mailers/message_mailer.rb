@@ -8,7 +8,7 @@ class MessageMailer < ActionMailer::Base
     @body     = message.body
 
     if message.has_attachment?
-      attachments[message.attachment.identifier] = message.attachment
+      attachments[File.basename(message.attachment.current_path)] = message.attachment
     end
 
     mail(subject: @subject, to: @to)

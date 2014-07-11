@@ -1,4 +1,4 @@
-def fill_and_submit_mail_form(params)
+def fill_and_submit_mail_form(params, button = 'Send')
   fill_in 'To', with: params[:to]
   fill_in 'Subject', with: params[:subject]
   fill_in 'Body', with: params[:body]
@@ -7,5 +7,5 @@ def fill_and_submit_mail_form(params)
 
   check 'Save as draft' if params[:draft]
 
-  click_on 'Send'
+  click_on button
 end
