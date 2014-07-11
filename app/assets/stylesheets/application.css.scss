@@ -18,6 +18,15 @@
 @import "bootstrap";
 
 table {
+
+  th.attachment {
+    width: 5%;
+  }
+
+  td.attachment {
+    text-align: center;
+  }
+
   th.to {
     width: 20%;
   }

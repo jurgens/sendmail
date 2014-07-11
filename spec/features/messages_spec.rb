@@ -9,4 +9,10 @@ describe 'Messages' do
     expect(page).to have_content mail_params[:to]
     expect(page).to have_content mail_params[:subject]
   end
+
+  specify 'should display paperclip if message has an attachment' do
+    message = create :message, :with_attachment
+    visit root_path
+    expect(first('tr td')).to have_css('.glyphicon-paperclip')
+  end
 end

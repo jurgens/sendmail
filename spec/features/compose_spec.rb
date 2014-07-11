@@ -27,4 +27,13 @@ RSpec.describe 'Mail', type: :feature do
     fill_and_submit_mail_form to: 'jurgen@kodolabs.com', subject: 'New mail', body: 'Hello, how are you doing?'
     expect(page).to have_content 'Success'
   end
+
+  specify 'compose email with attachment' do
+    fill_and_submit_mail_form to: 'jurgen@kodolabs.com',
+                              subject: 'New mail',
+                              body: 'Hello, how are you doing?',
+                              attachment: 'spec/fixtures/file.zip'
+    expect(page).to have_content 'Success'
+    expect(first('tr td')).to have_css('.glyphicon-paperclip')
+  end
 end

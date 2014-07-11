@@ -4,4 +4,9 @@ class Message < ActiveRecord::Base
 
   scope :latest_first, -> { order(created_at: :desc) }
 
+  mount_uploader :attachment, AttachmentUploader
+
+  def has_attachment?
+    attachment.file.present?
+  end
 end

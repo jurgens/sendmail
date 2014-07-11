@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'haml-rails'
 gem 'simple_form', '~>3.1.0.rc2'
 gem 'email_validator'
+gem 'carrierwave'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -20,6 +21,8 @@ end
 group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :development do
