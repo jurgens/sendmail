@@ -1,0 +1,18 @@
+.page-header
+  %h1 Message
+
+%table.table.message
+  %tr
+    %th To
+    %td=@message.to
+  %tr
+    %th Subject
+    %td= @message.subject
+  %tr
+    %th Body
+    %td= simple_format @message.body
+
+  - if @message.has_attachment?
+    %tr
+      %th Attachment
+      %td= link_to @message.attachment.identifier, @message.attachment.url

@@ -21,9 +21,10 @@
           - if message.has_attachment?
             %span.glyphicon.glyphicon-paperclip
 
-        %td= message.to
-        %td= message.subject
-        %td #{time_ago_in_words message.created_at} ago
+        %td.to= message.to
+        %td.subject
+          = link_to message.subject, message
+        %td.date #{time_ago_in_words message.created_at} ago
         %td
           = link_to message_path(message), method: :delete, data: {confirm: 'Are you sure you want to delete this message?'} do
             %span.glyphicon.glyphicon-remove
