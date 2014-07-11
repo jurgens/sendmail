@@ -7,5 +7,9 @@ FactoryGirl.define do
     trait :with_attachment do
       attachment { File.open(File.expand_path('spec/fixtures/file.zip')) }
     end
+
+    trait :draft do
+      draft true
+    end
   end
 end

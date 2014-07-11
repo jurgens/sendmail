@@ -1,4 +1,7 @@
 .page-header
+  - if @message.draft?
+    = link_to 'Edit', edit_message_path, class: 'pull-right btn btn-default'
+
   %h1 Message
 
 %table.table.message

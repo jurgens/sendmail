@@ -10,6 +10,7 @@
   %table.table
     %thead
       %tr
+        %th.status
         %th.attachment
         %th.to To
         %th.subject Subject
@@ -17,6 +18,9 @@
         %th.actions
     - @messages.each do |message|
       %tr
+        %td.status
+          - unless message.draft?
+            %span.glyphicon.glyphicon-envelope
         %td.attachment
           - if message.has_attachment?
             %span.glyphicon.glyphicon-paperclip

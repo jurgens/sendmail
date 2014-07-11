@@ -14,7 +14,7 @@ describe 'Messages' do
     specify 'should display paperclip if message has an attachment' do
       message = create :message, :with_attachment
       visit root_path
-      expect(first('tr td')).to have_css('.glyphicon-paperclip')
+      expect(first('tr td.attachment')).to have_css('.glyphicon-paperclip')
     end
   end
 
